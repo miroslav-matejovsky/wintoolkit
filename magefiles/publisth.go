@@ -9,32 +9,8 @@ import (
 	"github.com/magefile/mage/sh"
 )
 
-var projects = []string{
-	"magefiles",
-	"fileinfo",
-	"winservicedetail",
-}
-
-// Fmt formats Go source files with gofmt.
-func Fmt() error {
-	if err := sh.RunV("gofmt", "-s", "-w", "."); err != nil {
-		return err
-	}
-	fmt.Println("fmt done")
-	return nil
-}
-
-// All runs all quality checks and tests.
-func All() error {
-	mg.Deps(Tidy, Fmt, Vet, Lint)
-	if err := Test(); err != nil {
-		return err
-	}
-	return nil
-}
-
 // Publish publishes the module to the Go registry by tagging and pushing the version.
-// Requires VERSION environment variable to be set (e.g., VERSION=v1.0.0).
+// The version should be in the format x.y.z or vx.y.z.
 func Publish(version string) error {
 	// Validate version format: must be number.number.number or vnumber.number.number
 	validVersion := regexp.MustCompile(`^v?\d+\.\d+\.\d+$`)

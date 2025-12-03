@@ -15,7 +15,8 @@ func TestGetFileTime_ValidFile(t *testing.T) {
 	tempFile := filepath.Join(tempDir, "test.txt")
 	file, err := os.Create(tempFile)
 	require.NoError(t, err)
-	file.Close()
+	err = file.Close()
+	require.NoError(t, err)
 
 	// Get file times
 	ft, err := getFileTime(tempFile)
