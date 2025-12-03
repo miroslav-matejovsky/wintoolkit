@@ -1,4 +1,4 @@
-package fileinfo_test
+package fileinfo
 
 import (
 	"testing"

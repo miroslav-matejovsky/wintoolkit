@@ -5,3 +5,5 @@ use ./magefiles
 use ./fileinfo
 
 use ./winservicedetail
+
+use ./runtimesaudit

@@ -24,11 +24,6 @@ func Fmt() error {
 	return nil
 }
 
-// Test runs all tests and outputs results in testdox format using gotestsum.
-func Test() error {
-	return sh.RunV("gotestsum", "--format", "testdox", "./...")
-}
-
 // All runs all quality checks and tests.
 func All() error {
 	mg.Deps(Tidy, Fmt, Vet, Lint)

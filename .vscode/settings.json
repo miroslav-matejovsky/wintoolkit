@@ -44,12 +44,14 @@
     "fileversion",
     "gofmt",
     "golangci",
+    "gotestsum",
     "magefile",
     "magefiles",
     "matejovsky",
     "miroslav",
     "runtimesaudit",
     "stretchr",
+    "testdox",
     "winservicedetail",
     "wintoolkit"
   ]
