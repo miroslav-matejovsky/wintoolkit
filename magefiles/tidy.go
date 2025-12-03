@@ -1,5 +1,3 @@
-//go:build mage
-
 package main
 
 import (
@@ -9,10 +7,10 @@ import (
 	"github.com/magefile/mage/sh"
 )
 
-// Tidy cleans up go.mod and go.sum files.
+// Tidy cleans up go.mod and go.sum files in all projects.
 func Tidy() error {
 	for _, project := range projects {
-		if err := tidy(project); err != nil {
+		if err := TidyProject(project); err != nil {
 			return err
 		}
 	}
@@ -20,7 +18,8 @@ func Tidy() error {
 	return nil
 }
 
-func tidy(project string) error {
+// TidyProject runs go mod tidy on a specific project.
+func TidyProject(project string) error {
 	cwd, err := os.Getwd()
 	if err != nil {
 		return err

@@ -1,5 +1,3 @@
-//go:build mage
-
 package main
 
 import (
@@ -16,14 +14,7 @@ var projects = []string{
 	"fileinfo",
 }
 
-// Vet runs go vet on all packages.
-func Vet() error {
-	if err := sh.RunV("go", "vet", "./..."); err != nil {
-		return err
-	}
-	fmt.Println("vet done")
-	return nil
-}
+
 
 // Fmt formats Go source files with gofmt.
 func Fmt() error {
