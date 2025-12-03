@@ -12,9 +12,8 @@ import (
 var projects = []string{
 	"magefiles",
 	"fileinfo",
+	"winservicedetail",
 }
-
-
 
 // Fmt formats Go source files with gofmt.
 func Fmt() error {

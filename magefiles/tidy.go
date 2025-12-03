@@ -9,6 +9,9 @@ import (
 
 // Tidy cleans up go.mod and go.sum files in all projects.
 func Tidy() error {
+	if err := sh.RunV("go", "work", "sync"); err != nil {
+		return err
+	}
 	for _, project := range projects {
 		if err := TidyProject(project); err != nil {
 			return err
