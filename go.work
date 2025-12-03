@@ -1,4 +1,5 @@
 go 1.25.5
 
-use ./fileinfo
 use ./magefiles
+use ./fileinfo
+use ./winservicedetail
