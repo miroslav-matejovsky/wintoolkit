@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/magefile/mage/sh"
 )
@@ -20,17 +19,9 @@ func Vet() error {
 
 // VetProject runs go vet on a specific project.
 func VetProject(project string) error {
-	cwd, err := os.Getwd()
-	if err != nil {
-		return err
-	}
-	defer func() {
-		_ = os.Chdir(cwd)
-	}()
-	if err := os.Chdir(project); err != nil {
-		return err
-	}
-	if err := sh.RunV("go", "vet", "./..."); err != nil {
+	path := "./" + project + "/..."
+	fmt.Printf("vetting %s...\n", project)
+	if err := sh.RunV("go", "vet", path); err != nil {
 		return err
 	}
 	fmt.Printf("vet done for %s\n", project)
