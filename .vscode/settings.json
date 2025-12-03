@@ -42,6 +42,8 @@
   "todo-tree.filtering.includeHiddenFiles": true,
   "cSpell.words": [
     "fileversion",
+    "gofmt",
+    "golangci",
     "magefile",
     "magefiles",
     "matejovsky",

@@ -12,11 +12,11 @@ func Tidy() error {
 	if err := sh.RunV("go", "work", "sync"); err != nil {
 		return err
 	}
-	for _, project := range projects {
-		if err := TidyProject(project); err != nil {
-			return err
-		}
-	}
+	// for _, project := range projects {
+	// 	if err := TidyProject(project); err != nil {
+	// 		return err
+	// 	}
+	// }
 	fmt.Println("tidy done")
 	return nil
 }

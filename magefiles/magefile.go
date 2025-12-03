@@ -24,16 +24,6 @@ func Fmt() error {
 	return nil
 }
 
-// Lint runs golangci-lint on all packages.
-func Lint() error {
-	fmt.Println("linting...")
-	if err := sh.RunV("golangci-lint", "run", "./..."); err != nil {
-		return err
-	}
-	fmt.Println("linting done")
-	return nil
-}
-
 // Test runs all tests and outputs results in testdox format using gotestsum.
 func Test() error {
 	return sh.RunV("gotestsum", "--format", "testdox", "./...")
