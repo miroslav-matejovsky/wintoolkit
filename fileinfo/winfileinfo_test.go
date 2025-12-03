@@ -39,7 +39,7 @@ func TestSignedExe(t *testing.T) {
 
 func TestInstalledExe(t *testing.T) {
 	t.Skip("no test data")
-	
+
 	wfi, err := NewWinFileInfo("testdata\\installed.exe")
 	require.NoError(t, err)
 	certificates, err := wfi.GetCertificates()
@@ -63,7 +63,7 @@ func TestInstalledExe(t *testing.T) {
 
 func TestUnsignedExe(t *testing.T) {
 	t.Skip("no test data")
-	
+
 	wfi, err := NewWinFileInfo("testdata\\unsigned.exe")
 	require.NoError(t, err)
 	certificates, err := wfi.GetCertificates()

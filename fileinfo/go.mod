@@ -5,7 +5,7 @@ go 1.25.5
 require (
 	github.com/bi-zone/go-fileversion v1.0.0
 	github.com/stretchr/testify v1.11.1
-	golang.org/x/sys v0.33.0
+	golang.org/x/sys v0.38.0
 )
 
 require (
