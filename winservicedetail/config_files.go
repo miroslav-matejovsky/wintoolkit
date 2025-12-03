@@ -61,9 +61,16 @@ func collectServiceConfigFiles(dir string) ([]ServiceConfigFile, error) {
 				if err != nil {
 					return fmt.Errorf("failed to read config file %q: %w", path, err)
 				}
+				times, err := getFileTime(path)
+				if err != nil {
+					return fmt.Errorf("failed to get file times for %q: %w", path, err)
+				}
 				configFiles = append(configFiles, ServiceConfigFile{
-					Path:     path,
-					Contents: string(data),
+					Path:           path,
+					Contents:       string(data),
+					CreationTime:   times.CreationTime,
+					LastAccessTime: times.LastAccessTime,
+					LastWriteTime:  times.LastWriteTime,
 				})
 				break
 			}
