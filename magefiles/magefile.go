@@ -11,13 +11,9 @@ import (
 	"github.com/magefile/mage/sh"
 )
 
-// Tidy cleans up go.mod and go.sum files.
-func Tidy() error {
-	if err := sh.RunWith(nil, "go", "mod", "tidy"); err != nil {
-		return err
-	}
-	fmt.Println("tidy done")
-	return nil
+var projects = []string{
+	"magefiles",
+	"fileinfo",
 }
 
 // Vet runs go vet on all packages.

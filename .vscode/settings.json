@@ -39,15 +39,11 @@
   "powershell.startAutomatically": true,
   "powershell.integratedConsole.showOnStartup": false,
   "powershell.enableProfileLoading": true,
-  "gopls": {
-    "standaloneTags": [
-      "ignore",
-      "mage"
-    ]
-  },
   "todo-tree.filtering.includeHiddenFiles": true,
   "cSpell.words": [
     "fileversion",
+    "magefile",
+    "magefiles",
     "matejovsky",
     "miroslav",
     "stretchr",
