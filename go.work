@@ -6,4 +6,7 @@ use ./fileinfo
 
 use ./winservicedetail
 
-use ./runtimesaudit
+use (
+	./runtimesaudit
+	./systemaudit
+)

@@ -12,6 +12,15 @@ import (
 // Publish publishes the module to the Go registry by tagging and pushing the version.
 // The version should be in the format x.y.z or vx.y.z.
 func Publish(version string) error {
+	// Check if on main branch
+	currentBranch, err := sh.Output("git", "rev-parse", "--abbrev-ref", "HEAD")
+	if err != nil {
+		return fmt.Errorf("failed to get current branch: %w", err)
+	}
+	if currentBranch != "main" {
+		return fmt.Errorf("publish can only be done from the main branch, current branch: %s", currentBranch)
+	}
+
 	// Validate version format: must be number.number.number or vnumber.number.number
 	validVersion := regexp.MustCompile(`^v?\d+\.\d+\.\d+$`)
 	if !validVersion.MatchString(version) {

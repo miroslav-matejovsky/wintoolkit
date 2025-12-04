@@ -9,6 +9,7 @@ var projects = []string{
 	"fileinfo",
 	"winservicedetail",
 	"runtimesaudit",
+	"systemaudit",
 }
 
 // All runs all quality checks and tests.
