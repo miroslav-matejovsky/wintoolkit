@@ -12,7 +12,7 @@ type AuditResult struct {
 func DoAudit() (*AuditResult, error) {
 	vcRedist, err := DoVCRedistAudit()
 	if err != nil {
-		return nil, fmt.Errorf("failed to audit VC Redist runtimes: %w", err)
+		return nil, fmt.Errorf("failed to audit Visual C++ Redistributable runtimes: %w", err)
 	}
 	dotNet, err := DotNetRuntimesAuditResult()
 	if err != nil {
